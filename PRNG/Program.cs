@@ -1,8 +1,23 @@
 ﻿using System;
 
-string Seed = "Test Seed";
-int minValue = 0;
-int maxValue = 10;
-int index = 0;
+namespace PRNG
+{
+    static class Program
+    {
+        static int Main()
+        {
+            string Seed = "Test Seed";
+            int maxValue = 128;
+            PRandom ram = new PRandom(Seed, maxValue);
 
-Console.WriteLine(PRNG.GetNumber(Seed, minValue, maxValue, index));
+            bool running = true;
+
+            while (running)
+            {
+                Console.WriteLine(ram.Next());
+                //Console.WriteLine((ram.Next() % 4) + 5); <= testing some modulos
+            }
+            return 0;
+        }
+    }
+}
