@@ -6,7 +6,8 @@ namespace PRNG
     {
         static int Main()
         {
-            string Seed = "Test Seed";
+            //string Seed = "Test Seed";
+            int Seed = int.MaxValue;
             int maxValue = 128;
             PRandom ram = new PRandom(Seed, maxValue);
 

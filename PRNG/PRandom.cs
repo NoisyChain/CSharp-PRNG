@@ -12,11 +12,16 @@ namespace PRNG
         public PRandom(string seed, int range)
         {
             currentIndex = 0;
+            GenerateList(seed.GetHashCode(), 0, range);
+        }
+        public PRandom(int seed, int range)
+        {
+            currentIndex = 0;
             GenerateList(seed, 0, range);
         }
-        public void GenerateList(string seed, int minimum, int range)
+        public void GenerateList(int seed, int minimum, int range)
         {
-            int tbSeed = seed.GetHashCode();
+            int tbSeed = seed;
             int min = minimum;
             int max = range;
             int number;
